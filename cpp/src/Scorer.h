@@ -17,7 +17,7 @@ private:
     bool lookupWeather();
 
 
-    IceCream flavour;
+    IceCream flavour = Strawberry;
 };
 
 
