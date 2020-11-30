@@ -1,15 +1,13 @@
 #include <iostream>
 #include <vector>
 #include "Scoreboard.h"
+#include <chrono>
 
 void Scoreboard::printScoreboard() {
     std::vector<std::string> names = {"Steve","Julie","Francis"};
-    time_t rawtime;
-    struct tm * timeinfo;
-
-    time ( &rawtime );
-    timeinfo = localtime ( &rawtime );
-    std::cout << "Scoreboard at time: " << asctime (timeinfo) << "\n";
+    time_t rawtime = std::time(nullptr);
+    tm *localtime = std::localtime(&rawtime);
+    std::cout << "Scoreboard at time: " << std::asctime(localtime) << "\n";
 
     for(auto name: names)
         printScore(name);
