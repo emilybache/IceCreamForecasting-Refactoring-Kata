@@ -15,6 +15,8 @@ namespace IceCreamScorer.Tests
             // TODO: make this reliable
             // int score = getScore();
             //Assert.AreEqual(-1, score);
+
+            Assert.Fail();
         }
     }
 }
