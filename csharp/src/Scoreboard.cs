@@ -1,40 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace IceCreamScorer
 {
     public class Scoreboard
     {
-        private Scorer scorer;
+        private readonly Scorer scorer;
         public Scoreboard(Scorer scorer)
         {
             this.scorer = scorer;
         }
 
-        public void printScoreboard()
+        public void PrintScoreboard()
         {
-            //std::vector < std::string> names = { "Steve","Julie","Francis"};
-            //time_t rawtime = std::time(nullptr);
-            //tm* localtime = std::localtime(&rawtime);
-            //std::cout << "Scoreboard at time: " << std::asctime(localtime) << "\n";
+            var names = new List<string>() { "Steve", "Julie", "Francis" };
+            Console.WriteLine($"Scoreboard at time: {DateTime.Now:ddd MMM dd hh:mm:ss yyyy}");
 
-            //for (auto name: names)
-            //    printScore(name);
+            foreach (var name in names)
+                PrintScore(name);
         }
 
-        public void printScore(string name)
+        public void PrintScore(string name)
         {
-            //if (name == "Steve")
-            //{
-            //    scorer.setFlavour(Strawberry);
-            //}
-            //else
-            //{
-            //    scorer.updateSelection();
-            //}
-            //int score = scorer.getScore();
-            //std::cout << name << " score: " << score << "\n";
+            if (name == "Steve")
+            {
+                scorer.setFlavour(IceCreamFlavors.Strawberry);
+            }
+            else
+            {
+                scorer.updateSelection();
+            }
+            int score = scorer.GetScore();
+            Console.WriteLine($"{name} score: {score}");
         }
     }
 }
