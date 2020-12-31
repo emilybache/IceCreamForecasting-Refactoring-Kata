@@ -24,11 +24,11 @@ namespace IceCreamScorer
         {
             if (name == "Steve")
             {
-                scorer.setFlavour(IceCreamFlavors.Strawberry);
+                scorer.Flavour = IceCreamFlavors.Strawberry;
             }
             else
             {
-                scorer.updateSelection();
+                scorer.UpdateSelection();
             }
             int score = scorer.GetScore();
             Console.WriteLine($"{name} score: {score}");
