@@ -9,14 +9,14 @@ namespace IceCreamScorer
             bool sunnyToday = LookupWeather();
             switch (Flavour)
             {
-                case IceCreamFlavors.Strawberry:
+                case IceCreamFlavours.Strawberry:
                     if (sunnyToday)
                         return 10;
                     else
                         return 5;
-                case IceCreamFlavors.Chocolate:
+                case IceCreamFlavours.Chocolate:
                     return 6;
-                case IceCreamFlavors.Vanilla:
+                case IceCreamFlavours.Vanilla:
                     if (sunnyToday)
                         return 7;
                     else
@@ -25,7 +25,7 @@ namespace IceCreamScorer
                     return -1;
             }
         }
-        public IceCreamFlavors Flavour { private get; set; } = IceCreamFlavors.Strawberry;
+        public IceCreamFlavours Flavour { private get; set; } = IceCreamFlavours.Strawberry;
         public void UpdateSelection() 
         {
             // placeholder implementation - real version would use machine learning to predict sales

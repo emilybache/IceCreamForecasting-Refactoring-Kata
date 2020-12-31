@@ -24,7 +24,7 @@ namespace IceCreamScorer
         {
             if (name == "Steve")
             {
-                scorer.Flavour = IceCreamFlavors.Strawberry;
+                scorer.Flavour = IceCreamFlavours.Strawberry;
             }
             else
             {
