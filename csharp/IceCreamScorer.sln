@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IceCreamScorer", "src\IceCreamScorer.csproj", "{DFCB9EE5-81CD-4BBC-95F8-AC29669220E1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IceCreamScorerTests", "test\IceCreamScorerTests.csproj", "{4007A4E6-0DC4-4271-B549-D49666B538DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFCB9EE5-81CD-4BBC-95F8-AC29669220E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFCB9EE5-81CD-4BBC-95F8-AC29669220E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFCB9EE5-81CD-4BBC-95F8-AC29669220E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFCB9EE5-81CD-4BBC-95F8-AC29669220E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4007A4E6-0DC4-4271-B549-D49666B538DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4007A4E6-0DC4-4271-B549-D49666B538DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4007A4E6-0DC4-4271-B549-D49666B538DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4007A4E6-0DC4-4271-B549-D49666B538DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4B05C83-BEEC-4133-8C52-630580D3DE5E}
+	EndGlobalSection
+EndGlobal
