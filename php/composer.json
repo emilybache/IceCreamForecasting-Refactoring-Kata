@@ -1,0 +1,26 @@
+{
+    "name": "emilybache/icecreamscorer-refactoring-kata",
+    "description": "IceCream Refactoring Kata",
+    "type": "project",
+    "require": {
+        "php": "^7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "IceCream\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "scripts": {
+        "test": [
+            "phpunit --configuration phpunit.xml"
+        ]
+    }
+}
