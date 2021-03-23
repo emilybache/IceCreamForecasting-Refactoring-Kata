@@ -6,7 +6,8 @@ using namespace std;
 
 TEST(ScorerTest, scorer)
 {
-    // TODO: make this reliable
-    // int score = getScore();
-    //ASSERT_EQ(-1, score);
+    // TODO: make this pass
+    Scorer scorer;
+    int score = scorer.getScore();
+    ASSERT_EQ(-1, score);
 }
