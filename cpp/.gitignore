@@ -1,3 +1,4 @@
 # CMake
 cmake-build-debug/
 *.received.*
+.idea
