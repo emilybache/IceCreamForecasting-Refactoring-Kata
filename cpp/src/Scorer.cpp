@@ -1,10 +1,11 @@
 #include <stdlib.h>
 #include <stdexcept>
+#include <functional>
 #include "Scorer.h"
 
 
-int Scorer::getScore() {
-    bool sunnyToday = lookupWeather();
+int Scorer::getScore(const std::function<bool(Scorer *)> &doLookupWeather) {
+    bool sunnyToday = doLookupWeather(this);
     switch (flavour) {
         case Strawberry:
             if (sunnyToday)
@@ -35,4 +36,8 @@ void Scorer::updateSelection() {
 
 void Scorer::setFlavour(IceCream iceCreamFlavour) {
     flavour = iceCreamFlavour;
+}
+
+int Scorer::getScore() {
+    return getScore([](Scorer *scorer) { return scorer->lookupWeather(); });
 }
