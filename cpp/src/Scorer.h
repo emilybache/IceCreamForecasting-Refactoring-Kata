@@ -14,9 +14,6 @@ public:
     void updateSelection();
 
 private:
-    bool lookupWeather();
-
-
     IceCream flavour = Strawberry;
 };
 

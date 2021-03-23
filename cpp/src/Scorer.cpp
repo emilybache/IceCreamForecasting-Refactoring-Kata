@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <stdexcept>
 #include "Scorer.h"
+#include "WeatherService.h"
+#include "MachineLearningSubsystem.h"
 
 
 int Scorer::getScore() {
@@ -23,14 +25,9 @@ int Scorer::getScore() {
     }
 }
 
-bool Scorer::lookupWeather() {
-    // placeholder implementation - real version would make API call to weather service
-    throw std::runtime_error("API call to weather service which can't be called from unit test");
-}
 
 void Scorer::updateSelection() {
-    // placeholder implementation - real version would use machine learning to predict sales
-    throw std::runtime_error("Machine learning subsystem which another team has not implemented yet");
+    predictSelection();
 }
 
 void Scorer::setFlavour(IceCream iceCreamFlavour) {
