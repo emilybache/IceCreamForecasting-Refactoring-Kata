@@ -6,9 +6,8 @@ using namespace std;
 
 TEST(ScorerTest, scorer)
 {
-    // TODO: make this pass
     Scorer scorer;
     scorer.setFlavour(Strawberry);
-    int score = scorer.getScore([](Scorer *scorer) { return true; });
+    int score = scorer.getScore([]() { return true; });
     ASSERT_EQ(10, score);
 }

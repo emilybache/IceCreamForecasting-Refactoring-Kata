@@ -10,15 +10,11 @@ enum IceCream {
 class Scorer {
 public:
     int getScore();
-    int getScore(const std::function<bool(Scorer *)> &doLookupWeather);
+    int getScore(const std::function<bool()> &doLookupWeather);
     void setFlavour(IceCream iceCreamFlavour);
     void updateSelection();
 
 private:
-
-    bool lookupWeather();
-
-
     IceCream flavour = Strawberry;
 };
 
