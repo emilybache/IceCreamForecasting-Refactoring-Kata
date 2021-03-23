@@ -6,7 +6,6 @@ using namespace std;
 
 TEST(ScorerTest, scorer)
 {
-    // TODO: make this pass
     Scorer scorer;
     scorer.setFlavour(Strawberry);
     int score = scorer.getScore(true);

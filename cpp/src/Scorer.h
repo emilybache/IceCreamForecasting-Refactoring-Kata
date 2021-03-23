@@ -12,13 +12,8 @@ public:
     int getScore();
     int getScore(bool sunnyToday) const;
     void setFlavour(IceCream iceCreamFlavour);
-
     void updateSelection();
 private:
-
-
-    bool lookupWeather();
-
     IceCream flavour = Strawberry;
 };
 
