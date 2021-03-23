@@ -8,6 +8,7 @@ TEST(ScorerTest, scorer)
 {
     // TODO: make this pass
     Scorer scorer;
-    int score = scorer.getScore();
-    ASSERT_EQ(-1, score);
+    scorer.setFlavour(Strawberry);
+    int score = scorer.getScore(true);
+    ASSERT_EQ(10, score);
 }

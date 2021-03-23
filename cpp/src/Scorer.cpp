@@ -5,6 +5,10 @@
 
 int Scorer::getScore() {
     bool sunnyToday = lookupWeather();
+    return getScore(sunnyToday);
+}
+
+int Scorer::getScore(bool sunnyToday) const {
     switch (flavour) {
         case Strawberry:
             if (sunnyToday)
