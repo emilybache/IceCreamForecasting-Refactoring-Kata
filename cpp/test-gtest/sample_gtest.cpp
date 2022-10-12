@@ -1,6 +1,6 @@
-#define APPROVALS_GOOGLETEST
 #include <gtest/gtest.h>
-#include "../src/Scorer.h"
+
+#include "Scoreboard.h"
 
 using namespace std;
 
@@ -11,3 +11,11 @@ TEST(ScorerTest, scorer)
     int score = scorer.getScore();
     ASSERT_EQ(-1, score);
 }
+
+TEST(ScoreboardTest, scorer)
+{
+    //TODO: finish this test
+    //printScoreboard();
+}
+
+
