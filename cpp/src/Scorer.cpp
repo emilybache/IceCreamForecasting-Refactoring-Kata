@@ -27,7 +27,7 @@ int Scorer::getScore() {
 
 
 void Scorer::updateSelection() {
-    predictSelection();
+    flavour = predictSelection();
 }
 
 void Scorer::setFlavour(IceCream iceCreamFlavour) {
