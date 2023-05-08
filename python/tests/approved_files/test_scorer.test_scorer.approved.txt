@@ -1,0 +1,6 @@
+(<IceCream.Strawberry: 1>, True) 	=> 	score=10
+(<IceCream.Strawberry: 1>, False) 	=> 	score=5
+(<IceCream.Chocolate: 2>, True) 	=> 	score=6
+(<IceCream.Chocolate: 2>, False) 	=> 	score=6
+(<IceCream.Vanilla: 3>, True) 	=> 	score=7
+(<IceCream.Vanilla: 3>, False) 	=> 	score=5

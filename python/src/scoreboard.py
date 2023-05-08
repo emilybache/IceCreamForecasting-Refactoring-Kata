@@ -5,8 +5,12 @@ from scorer import IceCream
 
 
 def print_scoreboard():
-    names = ["Steve", "Julie", "Francis"]
     now = datetime.datetime.now()
+    print_scoreboard_at(now)
+
+
+def print_scoreboard_at(now):
+    names = ["Steve", "Julie", "Francis"]
     print(f"Scoreboard at time {now}")
     for name in names:
         print_score(name)
