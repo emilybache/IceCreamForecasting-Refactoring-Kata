@@ -13,10 +13,11 @@ flavour = None
 
 def get_score():
     sunny_today = lookup_weather()
-    return get_score_from_flavour_and_weather(flavour, sunny_today)
+    global flavour
+    return get_score_for_flavour_and_weather(flavour, sunny_today)
 
 
-def get_score_from_flavour_and_weather(current_flavour, sunny_today):
+def get_score_for_flavour_and_weather(current_flavour, sunny_today):
     if current_flavour == IceCream.Strawberry:
         if sunny_today:
             return 10
@@ -35,11 +36,22 @@ def get_score_from_flavour_and_weather(current_flavour, sunny_today):
 
 def lookup_weather():
     # placeholder implementation - real version would make API call to weather service
-    sunny = random.randrange(0, 1)
+    sunny = random.choice([True, False])
     return bool(sunny)
 
 
 def update_selection():
-    # placeholder implementation - real version would use machine learning to predict sales
-    global flavour
-    flavour = random.choice([IceCream.Strawberry, IceCream.Chocolate, IceCream.Vanilla])
+    score = get_score()
+    if score > 5:
+        global flavour
+        # placeholder implementation - real version would use machine learning to predict sales
+        flavour = random.choice([IceCream.Strawberry, IceCream.Chocolate, IceCream.Vanilla])
+
+
+def get_sales_forecast():
+    forecasts = {
+        IceCream.Strawberry: 9,
+        IceCream.Vanilla: 11,
+        IceCream.Chocolate: 3
+    }
+    return forecasts[flavour]

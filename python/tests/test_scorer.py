@@ -1,6 +1,6 @@
 import approvaltests
 
-from scorer import get_score, get_score_from_flavour_and_weather, IceCream
+from scorer import get_score, get_score_for_flavour_and_weather, IceCream
 
 
 def print_score_scenario(args, result):
@@ -11,7 +11,7 @@ def test_scorer():
     flavours = [IceCream.Strawberry, IceCream.Chocolate, IceCream.Vanilla]
     weathers = [True, False]
     approvaltests.verify_all_combinations(
-        get_score_from_flavour_and_weather,
+        get_score_for_flavour_and_weather,
         [
             flavours,
             weathers,
