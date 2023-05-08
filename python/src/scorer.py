@@ -13,15 +13,18 @@ flavour = None
 
 def get_score():
     sunny_today = lookup_weather()
-    global flavour
-    if flavour == IceCream.Strawberry:
+    return get_score_from_flavour_and_weather(flavour, sunny_today)
+
+
+def get_score_from_flavour_and_weather(current_flavour, sunny_today):
+    if current_flavour == IceCream.Strawberry:
         if sunny_today:
             return 10
         else:
             return 5
-    elif flavour == IceCream.Chocolate:
+    elif current_flavour == IceCream.Chocolate:
         return 6
-    elif flavour == IceCream.Vanilla:
+    elif current_flavour == IceCream.Vanilla:
         if sunny_today:
             return 7
         else:
