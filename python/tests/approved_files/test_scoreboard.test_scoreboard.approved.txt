@@ -1,4 +1,4 @@
 Scoreboard at time 2023-05-08 10:12:37.023834
-Steve score: 5
-Julie score: 5
-Francis score: 5
+Steve score: 10
+Julie score: 6
+Francis score: 6

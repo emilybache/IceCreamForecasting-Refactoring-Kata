@@ -2,15 +2,17 @@ import datetime
 
 import approvaltests
 
-from scoreboard import print_scoreboard_at, do_update_selection
+import scorer
+from scoreboard import print_scoreboard
 
 
 def stub_update_selection():
-    pass
+    scorer.flavour = scorer.IceCream.Chocolate
 
 
 def test_scoreboard(capsys):
-    print_scoreboard_at(datetime.datetime.fromisoformat("2023-05-08 10:12:37.023834"),
-                        selection=stub_update_selection)
+    print_scoreboard(datetime.datetime.fromisoformat("2023-05-08 10:12:37.023834"),
+                     update_selection=stub_update_selection,
+                     weather=True)
     captured = capsys.readouterr()
     approvaltests.verify(captured.out)

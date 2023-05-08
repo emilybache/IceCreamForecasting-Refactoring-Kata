@@ -11,12 +11,9 @@ class IceCream(enum.Enum):
 flavour = None
 
 
-def get_score():
-    sunny_today = lookup_weather()
-    return get_score_from_flavour_and_weather(flavour, sunny_today)
-
-
-def get_score_from_flavour_and_weather(current_flavour, sunny_today):
+def get_score(current_flavour=None, sunny_today=None):
+    sunny_today = sunny_today if sunny_today is not None else lookup_weather()
+    current_flavour = current_flavour or flavour
     if current_flavour == IceCream.Strawberry:
         if sunny_today:
             return 10
@@ -35,7 +32,7 @@ def get_score_from_flavour_and_weather(current_flavour, sunny_today):
 
 def lookup_weather():
     # placeholder implementation - real version would make API call to weather service
-    sunny = random.randrange(0, 1)
+    sunny = random.choice([True, False])
     return bool(sunny)
 
 
