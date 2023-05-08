@@ -1,7 +1,7 @@
-
-from scorer import get_score
+import scorer
+from scorer import get_score, IceCream
 
 
 def test_scorer():
-    assert -1 == get_score()
+    assert get_score() == -1
 

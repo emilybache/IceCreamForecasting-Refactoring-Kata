@@ -10,7 +10,6 @@ class IceCream(enum.Enum):
 
 flavour = None
 
-
 def get_score():
     sunny_today = lookup_weather()
     if flavour == IceCream.Strawberry:
