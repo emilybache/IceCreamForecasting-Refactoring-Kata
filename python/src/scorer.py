@@ -13,7 +13,6 @@ flavour = None
 
 def get_score():
     sunny_today = lookup_weather()
-    global flavour
     if flavour == IceCream.Strawberry:
         if sunny_today:
             return 10
