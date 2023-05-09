@@ -1,1 +1,11 @@
-{Strawberry:10, Chocolate:12, Vanilla:15, }
+Testing an optimized 9/64 scenarios:
+
+[Q1, true, false, false, false] => {Strawberry:5, Chocolate:5, Vanilla:5, } 
+[Q2, true, true, true, true] => {Strawberry:10, Chocolate:12, Vanilla:15, } 
+[Q3, true, false, true, false] => {Strawberry:10, Chocolate:10, Vanilla:10, } 
+[Q4, true, false, false, true] => {Strawberry:5, Chocolate:5, Vanilla:5, } 
+[Q1, false, true, false, false] => {Strawberry:5, Chocolate:5, Vanilla:5, } 
+[Q2, false, false, false, false] => {Strawberry:10, Chocolate:10, Vanilla:10, } 
+[Q3, false, true, false, true] => {Strawberry:10, Chocolate:12, Vanilla:10, } 
+[Q4, false, true, true, false] => {Strawberry:5, Chocolate:5, Vanilla:5, } 
+[Q1, true, true, true, true] => {Strawberry:5, Chocolate:5, Vanilla:5, } 
