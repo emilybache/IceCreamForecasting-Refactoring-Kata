@@ -10,10 +10,14 @@ public class Scorer {
 
     public int getScore() {
         boolean sunnyToday = lookupWeather();
-        if (flavour == null) {
+        return getScoreWithWeather(sunnyToday, flavour);
+    }
+
+    static int getScoreWithWeather(boolean sunnyToday, IceCream currentFlavour) {
+        if (currentFlavour == null) {
             return -1;
         } else {
-            switch (flavour)
+            switch (currentFlavour)
             {
                 case Strawberry:
                     if (sunnyToday)
