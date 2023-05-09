@@ -4,10 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class SampleTest {
+public class ScorerTest {
     @Test
-    void sample() {
-        assertEquals(true, false);
+    void getScore() {
+        var scorer = new Scorer();
+        assertEquals(-1, scorer.getScore());
     }
 
 }
