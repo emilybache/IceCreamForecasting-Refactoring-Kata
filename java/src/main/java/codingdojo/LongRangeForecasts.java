@@ -14,6 +14,10 @@ public class LongRangeForecasts {
             return scorer.lookupWeather(interestingDate1);
         };
 
+        return longRangeForecastWithScorerLookup(quarter, scorerLookup);
+    }
+
+    static HashMap<IceCream, Integer> longRangeForecastWithScorerLookup(String quarter, Function<Instant, Boolean> scorerLookup) {
         var result = new HashMap<IceCream, Integer>();
         if (Objects.equals(quarter, "Q1") || Objects.equals(quarter, "Q4")) {
             for (IceCream flavour : IceCream.values()) {
