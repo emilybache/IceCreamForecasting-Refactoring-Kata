@@ -1,0 +1,1 @@
+{Strawberry:10, Chocolate:12, Vanilla:15, }

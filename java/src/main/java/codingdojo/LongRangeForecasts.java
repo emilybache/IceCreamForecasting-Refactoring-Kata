@@ -2,12 +2,18 @@ package codingdojo;
 
 import java.time.Instant;
 import java.util.*;
+import java.util.function.Function;
 
 public class LongRangeForecasts {
 
     private final Scorer scorer = new Scorer();
 
     public Map<IceCream, Integer> longRangeForecast(String quarter) {
+        Function<Instant, Boolean> scorerLookup = interestingDate1 -> {
+            scorer.updateSelection();
+            return scorer.lookupWeather(interestingDate1);
+        };
+
         var result = new HashMap<IceCream, Integer>();
         if (Objects.equals(quarter, "Q1") || Objects.equals(quarter, "Q4")) {
             for (IceCream flavour : IceCream.values()) {
@@ -26,7 +32,8 @@ public class LongRangeForecasts {
         );
         List<Boolean> expectedWeather = new ArrayList<>();
         for (Instant interestingDate : interestingDates) {
-            Boolean lookupWeather = scorer.lookupWeather(interestingDate);
+
+            Boolean lookupWeather = scorerLookup.apply(interestingDate);
             expectedWeather.add(lookupWeather);
         }
 
