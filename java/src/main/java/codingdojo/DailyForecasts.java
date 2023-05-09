@@ -23,7 +23,7 @@ public class DailyForecasts {
             {
                 scorer.updateSelection();
             }
-            int score = scorer.getScore();
+            int score = scorer.getSalesForecast();
             System.out.println(name + " score: " + score);
         }
     }
