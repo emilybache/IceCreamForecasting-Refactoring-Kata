@@ -1,5 +1,6 @@
 package codingdojo;
 
+import org.approvaltests.Approvals;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,6 +30,6 @@ public class DailyForecastsTest {
     void salesForecast() {
         var forecasts = new DailyForecasts();
         forecasts.printSalesForecasts();
-        assertEquals("", capturedOutput);
+        Approvals.verify(capturedOutput);
     }
 }
