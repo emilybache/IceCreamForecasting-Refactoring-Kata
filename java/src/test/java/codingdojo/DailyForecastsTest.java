@@ -1,11 +1,13 @@
 package codingdojo;
 
+import org.approvaltests.Approvals;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.time.Instant;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -28,7 +30,15 @@ public class DailyForecastsTest {
     @Test
     void salesForecast() {
         var forecasts = new DailyForecasts();
-        forecasts.printSalesForecasts();
-        assertEquals("", capturedOutput);
+        forecasts.printSalesForecastsWithUpdateSelection(
+                Instant.parse("2023-05-09T13:44:18.039431Z"),
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        // do nothing
+                    }
+                }
+        );
+        Approvals.verify(capturedOutput);
     }
 }
