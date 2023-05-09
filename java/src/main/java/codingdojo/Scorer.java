@@ -1,5 +1,6 @@
 package codingdojo;
 
+import java.time.Instant;
 import java.util.Map;
 import java.util.Random;
 
@@ -33,6 +34,11 @@ public class Scorer {
     }
 
     public boolean lookupWeather() {
+        // placeholder implementation - real version would make API call to weather service
+        return new Random().nextBoolean();
+    }
+
+    public boolean lookupWeather(Instant when) {
         // placeholder implementation - real version would make API call to weather service
         return new Random().nextBoolean();
     }
