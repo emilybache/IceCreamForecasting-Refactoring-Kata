@@ -30,7 +30,12 @@ public class DailyForecastsTest {
     @Test
     void salesForecast() {
         var forecasts = new DailyForecasts();
-        forecasts.printSalesForecasts();
+        forecasts.printSalesForecasts(new Runnable() {
+            @Override
+            public void run() {
+                // do nothing
+            }
+        });
         Approvals.verify(capturedOutput,new Options().withScrubber(
                 new RegExScrubber("\\d\\d\\d\\d-\\d\\d-\\d\\d", "date")
                 )

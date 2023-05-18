@@ -10,6 +10,10 @@ public class Scorer {
 
     public int getScore() {
         boolean sunnyToday = lookupWeather();
+        return getScoreWithWeather(sunnyToday);
+    }
+
+    static int getScoreWithWeather(boolean sunnyToday) {
         if (flavour == null) {
             return -1;
         } else {

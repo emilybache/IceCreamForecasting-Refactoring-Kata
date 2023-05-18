@@ -10,13 +10,15 @@ public class LongRangeForecasts {
     private final Scorer scorer = new Scorer();
 
     public Map<IceCream, Integer> longRangeForecast(String quarter) {
-        Function<Instant, Boolean> scorerLookup = interestingDate1 -> {
+        Function<Long, Boolean> scorerLookup = daysForward -> {
             scorer.updateSelection();
-            var forecastDate = Instant.parse("2023-04-26T14:00:00.000-07:00");
-            long daysForward = ChronoUnit.DAYS.between(forecastDate, interestingDate1);
             return scorer.lookupWeather(daysForward);
         };
 
+        return getIceCreamForecast(quarter, scorerLookup);
+    }
+
+    static HashMap<IceCream, Integer> getIceCreamForecast(String quarter, Function<Long, Boolean> scorerLookup) {
         var result = new HashMap<IceCream, Integer>();
         if (Objects.equals(quarter, "Q1") || Objects.equals(quarter, "Q4")) {
             for (IceCream flavour : IceCream.values()) {
@@ -34,8 +36,9 @@ public class LongRangeForecasts {
         );
         List<Boolean> expectedWeather = new ArrayList<>();
         for (Instant interestingDate : interestingDates) {
-
-            Boolean lookupWeather = scorerLookup.apply(interestingDate);
+            var forecastDate = Instant.parse("2023-04-26T14:00:00.000-07:00");
+            long daysForward = ChronoUnit.DAYS.between(forecastDate, interestingDate);
+            Boolean lookupWeather = scorerLookup.apply(daysForward);
             expectedWeather.add(lookupWeather);
         }
 

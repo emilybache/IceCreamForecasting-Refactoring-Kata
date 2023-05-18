@@ -1,0 +1,6 @@
+[true, Strawberry] => 10 
+[true, Chocolate] => 6 
+[true, Vanilla] => 7 
+[false, Strawberry] => 5 
+[false, Chocolate] => 6 
+[false, Vanilla] => 5 

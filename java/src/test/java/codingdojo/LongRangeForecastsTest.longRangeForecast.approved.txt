@@ -1,1 +1,1 @@
-{Strawberry:10, Chocolate:10, Vanilla:15, }
+{Strawberry:12, Chocolate:12, Vanilla:17, }

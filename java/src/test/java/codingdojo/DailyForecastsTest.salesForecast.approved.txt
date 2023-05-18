@@ -1,4 +1,4 @@
 Forecast at: date
 Steve score: 9
-Julie score: 11
+Julie score: 9
 Francis score: 9
