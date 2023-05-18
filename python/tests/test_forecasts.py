@@ -1,6 +1,6 @@
 import approvaltests
 
-from forecasts import print_sales_forecasts
+from daily_forecasts import print_sales_forecasts
 
 
 def test_sales_forecasts(capsys):

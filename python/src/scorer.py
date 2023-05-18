@@ -29,9 +29,9 @@ def get_score():
         return -1
 
 
-def lookup_weather(location=None):
+def lookup_weather(location=None, days_forward=None):
     location = location or (59.3293, 18.0686)  # default to Stockholm
-    days_forward = 0
+    days_forward = days_forward or 0
     params = {"latitude": location[0], "longitude": location[1], "days_forward": days_forward}
     weather_app = "http://127.0.0.1:3005"
     try:
