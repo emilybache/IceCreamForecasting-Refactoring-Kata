@@ -1,6 +1,6 @@
 ﻿namespace IceCreamScorer
 {
-    public enum IceCreamFlavours
+    public enum IceCream
     {
         Strawberry,
         Chocolate,

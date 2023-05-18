@@ -9,14 +9,14 @@ namespace IceCreamScorer
             bool sunnyToday = LookupWeather();
             switch (Flavour)
             {
-                case IceCreamFlavours.Strawberry:
+                case IceCream.Strawberry:
                     if (sunnyToday)
                         return 10;
                     else
                         return 5;
-                case IceCreamFlavours.Chocolate:
+                case IceCream.Chocolate:
                     return 6;
-                case IceCreamFlavours.Vanilla:
+                case IceCream.Vanilla:
                     if (sunnyToday)
                         return 7;
                     else
@@ -25,13 +25,13 @@ namespace IceCreamScorer
                     return -1;
             }
         }
-        public IceCreamFlavours Flavour { private get; set; } = IceCreamFlavours.Strawberry;
+        public IceCream Flavour { private get; set; } = IceCream.Strawberry;
         public void UpdateSelection() 
         {
             // placeholder implementation - real version would use machine learning to predict sales
             throw new NotImplementedException("Machine learning subsystem which another team has not implemented yet");
         }
-        private bool LookupWeather() 
+        public bool LookupWeather(String location = null, int daysForward = 0) 
         {
             // placeholder implementation - real version would make API call to weather service
             throw new NotImplementedException("API call to weather service which can't be called from unit test");
