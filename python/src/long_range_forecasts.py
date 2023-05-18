@@ -27,6 +27,6 @@ def long_range_forecast(quarter: str):
         sunny_holidays = len([True for d in expected_weather if expected_weather])
         if sunny_holidays > 2 and flavour == IceCream.Vanilla:
             result[flavour] += 5
-        elif sunny_holidays > 1:
+        elif sunny_holidays > 1 and expected_weather[1]:
             result[flavour] += 2
     return result
