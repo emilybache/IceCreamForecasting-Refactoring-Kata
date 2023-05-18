@@ -11,16 +11,21 @@ class IceCream(enum.Enum):
 
 flavour = None
 
+
 def get_score():
     sunny_today = lookup_weather()
-    if flavour == IceCream.Strawberry:
+    return get_score_with_weather_and_flavour(sunny_today, flavour)
+
+
+def get_score_with_weather_and_flavour(sunny_today, current_flavour=None):
+    if current_flavour == IceCream.Strawberry:
         if sunny_today:
             return 10
         else:
             return 5
-    elif flavour == IceCream.Chocolate:
+    elif current_flavour == IceCream.Chocolate:
         return 6
-    elif flavour == IceCream.Vanilla:
+    elif current_flavour == IceCream.Vanilla:
         if sunny_today:
             return 7
         else:
@@ -42,7 +47,6 @@ def lookup_weather(location=None, days_forward=None):
         raise RuntimeError("Weather service request failed")
     forecast = response.json()
     return bool(forecast["weather"]["main"] == "Sunny")
-
 
 
 def update_selection():

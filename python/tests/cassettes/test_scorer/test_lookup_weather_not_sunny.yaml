@@ -1,0 +1,35 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.30.0
+    method: GET
+    uri: http://127.0.0.1:3005/forecast?latitude=63.399&longitude=13.0815&days_forward=0
+  response:
+    body:
+      string: '{"days_forward":0.0,"latitude":63.399,"longitude":13.0815,"todays_date":"2023-05-17T15:36:53.191147","weather":{"clouds":{"afternoon":100,"evening":75,"morning":100,"pre_dawn":50},"description":"moderate
+        snow","main":"Snow","precipitation":{"snow":{"afternoon":2.2,"evening":0.0,"morning":1.0,"pre_dawn":0.5,"total":3.7}},"temperature":{"average_daytime":"-3","maximum":"-1","minimum":"-5"},"visibility":30,"wind":{"direction":349,"gust":1.18,"speed":0.62}}}
+
+        '
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '459'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 17 May 2023 13:36:53 GMT
+      Server:
+      - Werkzeug/2.3.4 Python/3.11.2
+    status:
+      code: 200
+      message: OK
+version: 1

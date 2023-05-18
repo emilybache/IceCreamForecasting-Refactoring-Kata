@@ -1,0 +1,8 @@
+(True, <IceCream.Strawberry: 1>) => 10
+(True, <IceCream.Chocolate: 2>) => 6
+(True, <IceCream.Vanilla: 3>) => 7
+(True, None) => -1
+(False, <IceCream.Strawberry: 1>) => 5
+(False, <IceCream.Chocolate: 2>) => 6
+(False, <IceCream.Vanilla: 3>) => 5
+(False, None) => -1

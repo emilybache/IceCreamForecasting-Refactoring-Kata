@@ -1,0 +1,4 @@
+Forecast at time 2023-05-08 15:26:03.797869
+Steve score: 9
+Julie score: 11
+Francis score: 11
