@@ -3,19 +3,12 @@ package codingdojo;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
-import java.util.function.Function;
 
 public class LongRangeForecasts {
 
     private final Scorer scorer = new Scorer();
 
     public Map<IceCream, Integer> longRangeForecast(String quarter) {
-        Function<Instant, Boolean> scorerLookup = interestingDate1 -> {
-            scorer.updateSelection();
-            var forecastDate = Instant.parse("2023-04-26T14:00:00.000-07:00");
-            long daysForward = ChronoUnit.DAYS.between(forecastDate, interestingDate1);
-            return scorer.lookupWeather(daysForward);
-        };
 
         var result = new HashMap<IceCream, Integer>();
         if (Objects.equals(quarter, "Q1") || Objects.equals(quarter, "Q4")) {
@@ -34,8 +27,10 @@ public class LongRangeForecasts {
         );
         List<Boolean> expectedWeather = new ArrayList<>();
         for (Instant interestingDate : interestingDates) {
-
-            Boolean lookupWeather = scorerLookup.apply(interestingDate);
+            scorer.updateSelection();
+            var forecastDate = Instant.parse("2023-04-26T14:00:00.000-07:00");
+            long daysForward = ChronoUnit.DAYS.between(forecastDate, interestingDate);
+            Boolean lookupWeather = scorer.lookupWeather(daysForward);
             expectedWeather.add(lookupWeather);
         }
 

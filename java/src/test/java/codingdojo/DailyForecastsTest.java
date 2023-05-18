@@ -31,9 +31,6 @@ public class DailyForecastsTest {
     void salesForecast() {
         var forecasts = new DailyForecasts();
         forecasts.printSalesForecasts();
-        Approvals.verify(capturedOutput,new Options().withScrubber(
-                new RegExScrubber("\\d\\d\\d\\d-\\d\\d-\\d\\d", "date")
-                )
-        );
+        Approvals.verify(capturedOutput);
     }
 }
