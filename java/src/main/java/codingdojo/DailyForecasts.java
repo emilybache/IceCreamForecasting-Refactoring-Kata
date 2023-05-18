@@ -1,6 +1,9 @@
 package codingdojo;
 
 import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -12,7 +15,8 @@ public class DailyForecasts {
 
     public void printSalesForecasts() {
         var names = List.of( "Steve", "Julie", "Francis");
-        System.out.println("Forecast at: " + Instant.now());
+        var formatter = DateTimeFormatter.ISO_LOCAL_DATE.withZone(ZoneId.from(ZoneOffset.UTC));
+        System.out.println("Forecast at: " + formatter.format(Instant.now()));
 
         for (String name: names) {
             if (Objects.equals(name, "Steve"))

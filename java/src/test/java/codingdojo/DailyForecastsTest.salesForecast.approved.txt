@@ -1,4 +1,4 @@
-Forecast at: 2023-05-09T13:52:47.536707Z
+Forecast at: date
 Steve score: 9
-Julie score: 9
+Julie score: 11
 Francis score: 9

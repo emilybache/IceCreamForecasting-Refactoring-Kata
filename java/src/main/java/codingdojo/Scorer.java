@@ -38,7 +38,12 @@ public class Scorer {
         return new Random().nextBoolean();
     }
 
-    public boolean lookupWeather(Instant when) {
+    public boolean lookupWeather(long daysForward) {
+        // placeholder implementation - real version would make API call to weather service
+        return new Random().nextBoolean();
+    }
+
+    public boolean lookupWeather(Map.Entry<Double, Double> location) {
         // placeholder implementation - real version would make API call to weather service
         return new Random().nextBoolean();
     }

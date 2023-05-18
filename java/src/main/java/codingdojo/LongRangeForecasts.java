@@ -1,6 +1,7 @@
 package codingdojo;
 
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.function.Function;
 
@@ -11,7 +12,9 @@ public class LongRangeForecasts {
     public Map<IceCream, Integer> longRangeForecast(String quarter) {
         Function<Instant, Boolean> scorerLookup = interestingDate1 -> {
             scorer.updateSelection();
-            return scorer.lookupWeather(interestingDate1);
+            var forecastDate = Instant.parse("2023-04-26T14:00:00.000-07:00");
+            long daysForward = ChronoUnit.DAYS.between(forecastDate, interestingDate1);
+            return scorer.lookupWeather(daysForward);
         };
 
         var result = new HashMap<IceCream, Integer>();
@@ -19,7 +22,6 @@ public class LongRangeForecasts {
             for (IceCream flavour : IceCream.values()) {
                 result.put(flavour, 5);
             }
-            return result;
         }
         for (IceCream flavour : IceCream.values()) {
             result.put(flavour, 0);
@@ -38,13 +40,13 @@ public class LongRangeForecasts {
         }
 
         for (IceCream flavour : result.keySet()) {
-            result.put(flavour, 10);
+            result.put(flavour, result.get(flavour) + 10);
             var sunnyHolidays = expectedWeather.stream().filter(s -> s).count();
             if (sunnyHolidays > 2 && flavour == IceCream.Vanilla) {
-                result.put(flavour, 15);
+                result.put(flavour, result.get(flavour) + 5);
             }
-            if (expectedWeather.get(1) && flavour == IceCream.Chocolate) {
-                result.put(flavour, 12);
+            if (sunnyHolidays > 1 && expectedWeather.get(1)) {
+                result.put(flavour, result.get(flavour) + 2);
             }
         }
         return result;
