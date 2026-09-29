@@ -1,22 +1,19 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using IceCreamScorer;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace IceCreamScorer.Tests
 {
-    [TestClass()]
     public class ScorerTests
     {
-        [TestMethod()]
+        [Fact]
         public void GetScoreTest()
         {
             // TODO: make this reliable
             // int score = getScore();
             //Assert.AreEqual(-1, score);
 
-            Assert.Fail();
+            Assert.Fail("TODO: make this reliable");
         }
     }
 }
