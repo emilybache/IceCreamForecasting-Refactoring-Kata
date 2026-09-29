@@ -24,7 +24,6 @@ namespace IceCreamScorer.Tests
         {
             var printedResult = new StringBuilder();
             printedResult.Append("{");
-            // Java sorts the keys by enum ordinal, which matches declaration order.
             foreach (IceCream key in Enum.GetValues<IceCream>())
             {
                 printedResult.Append(key);
