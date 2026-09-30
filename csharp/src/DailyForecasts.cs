@@ -1,32 +1,28 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace IceCreamScorer
 {
     public class DailyForecasts
     {
-        private readonly Scorer scorer;
-        public DailyForecasts(Scorer scorer)
-        {
-            this.scorer = scorer;
-        }
+        private readonly Scorer scorer = new Scorer();
 
         public void PrintSalesForecasts()
         {
-            var names = new List<string>() { "Steve", "Julie", "Francis" };
-            Console.WriteLine($"Scoreboard at time: {DateTime.Now:ddd MMM dd hh:mm:ss yyyy}");
+            var names = new List<string> { "Steve", "Julie", "Francis" };
+            Console.WriteLine($"Forecast at: {DateTime.UtcNow:yyyy-MM-dd}");
 
             foreach (var name in names)
             {
                 if (name == "Steve")
                 {
-                    scorer.Flavour = IceCream.Strawberry;
+                    Scorer.Flavour = IceCream.Strawberry;
                 }
                 else
                 {
                     scorer.UpdateSelection();
                 }
-                int score = scorer.GetScore();
+                int score = scorer.GetSalesForecast();
                 Console.WriteLine($"{name} score: {score}");
             }
         }
